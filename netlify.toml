@@ -2,3 +2,6 @@
 base = "./frontend"
 command = "yarn build"
 publish = "./frontend/build/"
+
+[build.enviroment]
+REACT_APP_API_URL = 'https://microexplorer-backend.herokuapp.com/'
