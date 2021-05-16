@@ -53,20 +53,6 @@ const UpdateService = () => {
     fetchService();
   }, []);
 
-  // try {
-  //   const service = await api.get(`/services/${slug}`);
-  //   setName(service.name);
-  //   setCategory(service.category);
-  //   setImage(service.image);
-  //   setStreet(service.street);
-  //   setNeighborhood(service.neighborhood);
-  //   setDescription(service.description);
-  //   setSlogan(service.slogan);
-  //   setCnpj(service.cnpj);
-  // } catch (error) {
-  //   toast.error('Esse serviço não existe.');
-  // }
-
   useEffect(() => {
     if (id !== '') history.push(`/uploadphotos/${slug}`);
   }, [id]);
@@ -74,16 +60,18 @@ const UpdateService = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await api
-        .put(`/services/update/${slug}`, {
-          name,
-          category,
-          street,
-          neighborhood,
-          description,
-          slogan,
-          cnpj,
-        })
+     await api.put(`/services/update/${slug}`, {
+        name,
+        category,
+        street,
+        neighborhood,
+        description,
+        slogan,
+        cnpj,
+        whatsapp,
+        instagram,
+        email,
+      })
         .then(() => {
           localStorage.setItem('serviceId', slug);
           setId(slug);
@@ -99,13 +87,16 @@ const UpdateService = () => {
     try {
       await api
         .put(`/services/update/${slug}`, {
-          name,
-          category,
-          street,
-          neighborhood,
-          description,
-          slogan,
-          cnpj,
+         name,
+        category,
+        street,
+        neighborhood,
+        description,
+        slogan,
+        cnpj,
+        whatsapp,
+        instagram,
+        email,
         })
         .then(() => {
           setId(slug);
@@ -268,28 +259,6 @@ const UpdateService = () => {
               }}
             />
           </FormGroup>
-          {/* <FormGroup>
-            <Label for='inputWhatsapp'>Whatsapp</Label>
-            <Input
-              type='text'
-              id='inputWhatsapp'
-              value={whatsapp}
-              onChange={(e) => {
-                setWhatsapp(e.target.value);
-              }}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for='inputInstagram'>Instagram</Label>
-            <Input
-              type='text'
-              id='inputInstagram'
-              value={instagram}
-              onChange={(e) => {
-                setInstagram(e.target.value);
-              }}
-            />
-          </FormGroup> */}
           <ButtonGroup>
             <ButtonStyle type='submit' outline className='w-100'>
               Editar foto
