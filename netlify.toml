@@ -5,3 +5,8 @@ publish = "./build/"
 
 [build.enviroment]
 REACT_APP_API_URL = 'https://microexplorer-backend.herokuapp.com/'
+
+[redirects]
+from = "/*"
+to = "/index.html"
+status = 200
