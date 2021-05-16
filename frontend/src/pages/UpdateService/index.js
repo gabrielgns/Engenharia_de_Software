@@ -61,17 +61,17 @@ const UpdateService = () => {
     e.preventDefault();
     try {
      await api.put(`/services/update/${slug}`, {
-        name,
-        category,
-        street,
-        neighborhood,
-        description,
-        slogan,
-        cnpj,
-        whatsapp,
-        instagram,
-        email,
-      })
+          name,
+          category,
+          street,
+          neighborhood,
+          description,
+          slogan,
+          cnpj,
+          whatsapp,
+          instagram,
+          email,
+        })
         .then(() => {
           localStorage.setItem('serviceId', slug);
           setId(slug);
@@ -81,23 +81,22 @@ const UpdateService = () => {
       return toast.error('Erro na atualização dos dados de comércio.');
     }
   };
-
   const handleUpdateToService = async (e) => {
     e.preventDefault();
     try {
       await api
         .put(`/services/update/${slug}`, {
-         name,
-        category,
-        street,
-        neighborhood,
-        description,
-        slogan,
-        cnpj,
-        whatsapp,
-        instagram,
-        email,
-        })
+          name,
+          category,
+          street,
+          neighborhood,
+          description,
+          slogan,
+          cnpj,
+          whatsapp,
+          instagram,
+          email,
+          })
         .then(() => {
           setId(slug);
         });
