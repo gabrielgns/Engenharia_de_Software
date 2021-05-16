@@ -60,7 +60,8 @@ const UpdateService = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-     await api.put(`/services/update/${slug}`, {
+      await api
+        .put(`/services/update/${slug}`, {
           name,
           category,
           street,
@@ -96,7 +97,7 @@ const UpdateService = () => {
           whatsapp,
           instagram,
           email,
-          })
+        })
         .then(() => {
           setId(slug);
         });
