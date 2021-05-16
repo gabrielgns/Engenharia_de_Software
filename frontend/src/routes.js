@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Services from './pages/Service';
 import RegisterUser from './pages/Register/User';
 import RegisterBusiness from './pages/Register/Business';
@@ -23,7 +23,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 const Routes = () => (
-  <HashRouter>
+  <BrowserRouter>
     <Switch>
       <Route exact path='/' component={() => <Home />} />
       <Route exact path='/login' component={() => <SingIn />} />
@@ -44,7 +44,7 @@ const Routes = () => (
       <Route path='/services/:id' component={() => <Services />} />
       <Route path='*' component={() => <h1>Page not found</h1>} />
     </Switch>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default Routes;
